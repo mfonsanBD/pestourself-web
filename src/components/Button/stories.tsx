@@ -4,20 +4,7 @@ import Button, { ButtonProps } from '.'
 
 export default {
   title: 'Button',
-  component: Button,
-  argTypes: {
-    children: {
-      type: 'string'
-    },
-    icon: {
-      type: ''
-    }
-  },
-  parameters: {
-    backgrounds: {
-      default: 'dark'
-    }
-  }
+  component: Button
 } as Meta
 
 export const Default: Story<ButtonProps> = (args) => <Button {...args} />
