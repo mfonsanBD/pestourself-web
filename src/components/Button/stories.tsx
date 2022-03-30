@@ -12,6 +12,11 @@ export default {
     icon: {
       type: ''
     }
+  },
+  parameters: {
+    backgrounds: {
+      default: 'dark'
+    }
   }
 } as Meta
 
@@ -36,4 +41,11 @@ asLink.args = {
   children: 'Buy Now',
   as: 'a',
   href: '/link'
+}
+
+export const asMinimal: Story<ButtonProps> = (args) => <Button {...args} />
+
+asMinimal.args = {
+  children: 'Buy Now',
+  minimal: true
 }

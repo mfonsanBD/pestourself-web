@@ -67,9 +67,7 @@ const ExploreSidebar = ({
       <S.Content>
         {items.map((item) => (
           <S.Items key={item.title}>
-            <Heading lineBottom lineColor="secondary" size="small">
-              {item.title}
-            </Heading>
+            <Heading size="small">{item.title}</Heading>
 
             {item.type === 'checkbox' &&
               item.fields.map((field) => (

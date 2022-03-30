@@ -1,44 +1,11 @@
-import Base from 'templates/Base'
-
-import Showcase from 'components/Showcase'
-import { BannerProps } from 'components/Banner'
-import { Container } from 'components/Container'
-import BannerSlider from 'components/BannerSlider'
-import { GameCardProps } from 'components/GameCard'
-import { HighlightProps } from 'components/Highlight'
-
-import * as S from './styles'
+import Image from 'next/image'
 import { NextSeo } from 'next-seo'
 
-export type HomeTemplateProps = {
-  banners: BannerProps[]
-  newGames: GameCardProps[]
-  mostPopularHighlight: HighlightProps
-  mostPopularGames: GameCardProps[]
-  upComingHighlight: HighlightProps
-  upComingGames: GameCardProps[]
-  freeHighlight: HighlightProps
-  freeGames: GameCardProps[]
-  newGamesTitle: string
-  mostPopularTitle: string
-  upcomingTitle: string
-  freeGamesTitle: string
-}
+import Base from 'templates/Base'
 
-const Home = ({
-  banners,
-  newGames,
-  mostPopularGames,
-  mostPopularHighlight,
-  upComingGames,
-  upComingHighlight,
-  freeGames,
-  freeHighlight,
-  newGamesTitle,
-  mostPopularTitle,
-  upcomingTitle,
-  freeGamesTitle
-}: HomeTemplateProps) => (
+import * as S from './styles'
+
+const Home = () => (
   <Base>
     <NextSeo
       title="Home - Won Games"
@@ -51,33 +18,16 @@ const Home = ({
           'All your favorite games in one place. WON is the best and most complete gaming platform.'
       }}
     />
-    <Container>
-      <S.SectionBanner>
-        <BannerSlider items={banners} />
-      </S.SectionBanner>
-    </Container>
 
-    <S.SectionNews>
-      <Showcase title={newGamesTitle} games={newGames} color="black" />
-    </S.SectionNews>
+    <S.Cover>
+      <Image
+        src="/img/hero-bg.jpg"
+        alt="Homem sentado com o notebook estudando"
+        layout="fill"
+      />
+    </S.Cover>
 
-    <Showcase
-      title={mostPopularTitle}
-      highlight={mostPopularHighlight}
-      games={mostPopularGames}
-    />
-
-    <Showcase
-      title={upcomingTitle}
-      highlight={upComingHighlight}
-      games={upComingGames}
-    />
-
-    <Showcase
-      title={freeGamesTitle}
-      highlight={freeHighlight}
-      games={freeGames}
-    />
+    <h1 style={{ color: 'red' }}>Home</h1>
   </Base>
 )
 

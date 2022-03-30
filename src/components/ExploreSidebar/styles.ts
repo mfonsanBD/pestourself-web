@@ -49,7 +49,7 @@ export const Items = styled.div`
     }
 
     & + div {
-      border-top: 0.1rem solid ${rgba(theme.colors.gray, 0.2)};
+      border-top: 0.1rem solid ${rgba(theme.colors.mediumGray, 0.2)};
       margin-top: ${theme.spacings.small};
       padding-top: ${theme.spacings.xsmall};
     }
@@ -58,7 +58,7 @@ export const Items = styled.div`
 
 export const Footer = styled.div`
   ${({ theme }) => css`
-    box-shadow: 0 -0.2rem 0.4rem ${rgba(theme.colors.black, 0.2)};
+    box-shadow: 0 -0.2rem 0.4rem ${rgba(theme.colors.darkGray, 0.2)};
     padding: ${theme.spacings.small};
 
     ${media.greaterThan('medium')`
@@ -100,18 +100,18 @@ const wrapperModifiers = {
     }
 
     ${HeadingStyles.Wrapper} {
-      color: ${theme.colors.black};
+      color: ${theme.colors.darkGray};
       font-size: ${theme.font.sizes.xlarge};
       font-weight: ${theme.font.normal};
     }
 
     ${RadioStyles.Label},
     ${CheckboxStyles.Label} {
-      color: ${theme.colors.black};
+      color: ${theme.colors.darkGray};
     }
 
     ${IconWrapper} {
-      color: ${theme.colors.black};
+      color: ${theme.colors.darkGray};
       > svg {
         position: absolute;
         width: 30px;

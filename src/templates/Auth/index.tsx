@@ -23,35 +23,38 @@ const Auth = ({ title, children }: AuthProps) => (
       <S.BannerContent>
         <Link href="/">
           <a>
-            <Logo id="banner" />
+            <Logo color="white" />
           </a>
         </Link>
 
         <div>
           <Heading size="huge" color="white">
-            Todos os seus jogos favoritos em um só lugar
+            Os maiores cuidadores de Pet em um só lugar
           </Heading>
           <S.Subtitle>
-            <strong>WON</strong> é a melhor e mais completa plataforma de jogos.
+            <strong>Pets Tour Self</strong>, a maior e mais completa plataforma
+            para cuidadores.
           </S.Subtitle>
         </div>
 
         <S.Footer>
-          Won Games {currentYear} © Todos os Direitos Reservados
+          © Copyright {currentYear} - Pets Tour Self. Todos os Direitos
+          Reservados
         </S.Footer>
       </S.BannerContent>
     </S.BannerBlock>
 
     <S.Content>
       <S.ContentWrapper>
-        <Link href="/">
-          <a>
-            <Logo id="content" color="black" size="large" />
-          </a>
-        </Link>
-        <Heading color="black" lineColor="secondary" lineLeft>
-          {title}
-        </Heading>
+        <S.LogoBox>
+          <Link href="/">
+            <a>
+              <Logo color="darkGray" />
+            </a>
+          </Link>
+        </S.LogoBox>
+
+        <Heading color="darkGray">{title}</Heading>
 
         {children}
       </S.ContentWrapper>

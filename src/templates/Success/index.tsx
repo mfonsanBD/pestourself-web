@@ -1,32 +1,11 @@
 import { Done } from '@styled-icons/material-outlined/Done'
 import { Container } from 'components/Container'
-import { GameCardProps } from 'components/GameCard'
-import { HighlightProps } from 'components/Highlight'
-import Showcase from 'components/Showcase'
-import { useCart } from 'hooks/use-cart'
 import { NextSeo } from 'next-seo'
 import Link from 'next/link'
-import { useEffect } from 'react'
 import Base from 'templates/Base'
 import * as S from './styles'
 
-export type SuccessTemplateProps = {
-  recommendedTitle: string
-  recommendedGames: GameCardProps[]
-  recommendedHighlight: HighlightProps
-}
-
-const Success = ({
-  recommendedTitle,
-  recommendedGames,
-  recommendedHighlight
-}: SuccessTemplateProps) => {
-  const { clearCart } = useCart()
-
-  useEffect(() => {
-    clearCart()
-  }, [clearCart])
-
+const Success = () => {
   return (
     <Base>
       <NextSeo title="Sucesso - Won Games" />
@@ -48,12 +27,6 @@ const Success = ({
           </S.Text>
         </S.Wrapper>
       </Container>
-
-      <Showcase
-        title={recommendedTitle}
-        games={recommendedGames}
-        highlight={recommendedHighlight}
-      />
     </Base>
   )
 }

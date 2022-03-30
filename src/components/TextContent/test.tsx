@@ -35,10 +35,10 @@ describe('<TextContent />', () => {
     }).parentElement
 
     expect(wrapper).toHaveStyle({
-      color: '#FAFAFA' // theme.colors.white
+      color: '#FFFFFF' // theme.colors.white
     })
 
-    expect(wrapper).toHaveStyleRule('color', '#030517', {
+    expect(wrapper).toHaveStyleRule('color', '#212121', {
       media: '(min-width: 768px)'
     })
   })

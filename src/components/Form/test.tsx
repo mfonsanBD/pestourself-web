@@ -18,22 +18,22 @@ describe('<Form />', () => {
 
       .c1 {
         font-size: 1.4rem;
-        color: #030517;
+        color: #212121;
         text-align: center;
       }
 
       .c1 a {
-        color: #3CD3C1;
+        color: #FEAE11;
         -webkit-text-decoration: none;
         text-decoration: none;
-        border-bottom: 0.1rem solid #3CD3C1;
+        border-bottom: 0.1rem solid #FEAE11;
         -webkit-transition: color,border,0.1s ease-in-out;
         transition: color,border,0.1s ease-in-out;
       }
 
       .c1 a:hover {
-        color: #29b3a3;
-        border-bottom: 0.1rem solid #29b3a3;
+        color: #db9101;
+        border-bottom: 0.1rem solid #db9101;
       }
 
       <body>

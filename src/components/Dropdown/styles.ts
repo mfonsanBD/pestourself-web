@@ -37,7 +37,7 @@ export const Content = styled.div`
     display: flex;
     flex-direction: column;
     background: ${theme.colors.white};
-    color: ${theme.colors.black};
+    color: ${theme.colors.darkGray};
     margin-top: ${theme.spacings.small};
     position: absolute;
     right: 0;

@@ -12,8 +12,6 @@ describe('<Menu />', () => {
   it('should render the menu', () => {
     render(<Menu />)
     expect(screen.getByLabelText(/open menu/i)).toBeInTheDocument()
-    expect(screen.getByLabelText(/search/i)).toBeInTheDocument()
-    expect(screen.getAllByLabelText(/shopping cart/i)).toHaveLength(2)
   })
 
   it('should handle the open/close mobile menu', () => {

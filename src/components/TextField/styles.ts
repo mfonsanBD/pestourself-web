@@ -24,7 +24,7 @@ export const InputWrapper = styled.div`
 
 export const Input = styled.input<IconPositionProps>`
   ${({ theme, iconPosition }) => css`
-    color: ${theme.colors.black};
+    color: ${theme.colors.darkGray};
     font-family: ${theme.font.family};
     font-size: ${theme.font.sizes.medium};
     padding: ${theme.spacings.xxsmall} 0;
@@ -50,7 +50,7 @@ export const Input = styled.input<IconPositionProps>`
 export const Label = styled.label`
   ${({ theme }) => css`
     font-size: ${theme.font.sizes.small};
-    color: ${theme.colors.black};
+    color: ${theme.colors.darkGray};
     cursor: pointer;
   `}
 `
@@ -58,7 +58,7 @@ export const Label = styled.label`
 export const Icon = styled.div<IconPositionProps>`
   ${({ theme, iconPosition }) => css`
     display: flex;
-    color: ${theme.colors.gray};
+    color: ${theme.colors.mediumGray};
     order: ${iconPosition === 'right' ? 1 : 0};
 
     & > svg {
@@ -70,7 +70,7 @@ export const Icon = styled.div<IconPositionProps>`
 
 export const Error = styled.p`
   ${({ theme }) => css`
-    color: ${theme.colors.red};
+    color: ${theme.colors.responses.danger};
     font-size: ${theme.font.sizes.xsmall};
   `}
 `
@@ -78,11 +78,11 @@ export const Error = styled.p`
 const wrapperModifiers = {
   error: (theme: DefaultTheme) => css`
     ${InputWrapper} {
-      border-color: ${theme.colors.red};
+      border-color: ${theme.colors.responses.danger};
     }
     ${Icon},
     ${Label} {
-      color: ${theme.colors.red};
+      color: ${theme.colors.responses.danger};
     }
   `,
   disabled: (theme: DefaultTheme) => css`
@@ -90,7 +90,7 @@ const wrapperModifiers = {
     ${Input},
     ${Icon} {
       cursor: not-allowed;
-      color: ${theme.colors.gray};
+      color: ${theme.colors.mediumGray};
 
       &::placeholder {
         color: currentColor;

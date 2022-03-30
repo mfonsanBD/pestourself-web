@@ -53,18 +53,18 @@ export const FormError = styled.div`
 export const FormLink = styled.div`
   ${({ theme }) => css`
     font-size: ${theme.font.sizes.small};
-    color: ${theme.colors.black};
+    color: ${theme.colors.darkGray};
     text-align: center;
 
     a {
-      color: ${theme.colors.secondary};
+      color: ${theme.colors.primary};
       text-decoration: none;
-      border-bottom: 0.1rem solid ${theme.colors.secondary};
+      border-bottom: 0.1rem solid ${theme.colors.primary};
       transition: color, border, ${theme.transition.fast};
 
       &:hover {
-        color: ${darken(0.1, theme.colors.secondary)};
-        border-bottom: 0.1rem solid ${darken(0.1, theme.colors.secondary)};
+        color: ${darken(0.1, theme.colors.primary)};
+        border-bottom: 0.1rem solid ${darken(0.1, theme.colors.primary)};
       }
     }
   `}

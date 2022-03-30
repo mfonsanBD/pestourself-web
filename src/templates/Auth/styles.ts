@@ -1,5 +1,4 @@
 import * as HeadingStyles from 'components/Heading/styles'
-import * as LogoStyles from 'components/Logo/styles'
 import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
 
@@ -10,6 +9,14 @@ export const Wrapper = styled.main`
 
   ${media.greaterThan('medium')`
     grid-template-columns: 1fr 1fr;
+  `}
+`
+
+export const LogoBox = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    justify-content: center;
+    margin-bottom: ${theme.spacings.medium};
   `}
 `
 
@@ -30,7 +37,7 @@ export const BannerBlock = styled.div`
       bottom: 0;
       left: 0;
       right: 0;
-      background: ${theme.colors.black};
+      background: ${theme.colors.darkGray};
       opacity: 0.85;
     }
   `}
@@ -90,10 +97,6 @@ export const ContentWrapper = styled.div`
     ${media.greaterThan('medium')`
       width: 36rem;
     `}
-
-    ${LogoStyles.Wrapper} {
-      margin: 0 auto ${theme.spacings.xxlarge};
-    }
 
     ${HeadingStyles.Wrapper} {
       margin-bottom: ${theme.spacings.medium};

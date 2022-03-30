@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
     ${media.greaterThan('medium')`
       background: ${theme.colors.white};
       padding: ${theme.spacings.medium};
-      color: ${theme.colors.black};
+      color: ${theme.colors.darkGray};
     `}
 
     h1,
@@ -21,9 +21,9 @@ export const Wrapper = styled.div`
     h6 {
       color: ${theme.colors.white};
       margin: ${theme.spacings.xsmall} 0;
-      ${HeadingStyles.wrapperModifiers.lineLeft(theme, 'secondary')};
+      ${HeadingStyles.wrapperModifiers.lineLeft(theme)};
       ${media.greaterThan('medium')`
-        color: ${theme.colors.black};
+        color: ${theme.colors.darkGray};
       `}
     }
 

@@ -3,7 +3,12 @@ import Footer from '.'
 
 export default {
   title: 'Footer',
-  component: Footer
+  component: Footer,
+  parameters: {
+    backgrounds: {
+      default: 'dark'
+    }
+  }
 } as Meta
 
 export const Default: Story = () => (
@@ -11,9 +16,3 @@ export const Default: Story = () => (
     <Footer />
   </div>
 )
-
-Default.parameters = {
-  viewport: {
-    defaultViewport: 'mobile1'
-  }
-}

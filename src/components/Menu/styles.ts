@@ -5,6 +5,7 @@ export const Wrapper = styled.menu<MenuFullProps>`
   ${({ theme, isOpen }) => css`
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: ${theme.spacings.small} 0;
     position: relative;
     z-index: ${isOpen ? theme.layers.menu : `calc(${theme.layers.menu} - 1)`};
@@ -28,6 +29,11 @@ export const IconWrapper = styled.div`
   `}
 `
 
+export const RightMenu = styled.div`
+  display: flex;
+  align-items: center;
+`
+
 export const MenuGroup = styled.div`
   ${({ theme }) => css`
     display: flex;
@@ -35,16 +41,13 @@ export const MenuGroup = styled.div`
     justify-content: flex-end;
     align-items: center;
     z-index: ${theme.layers.menu} + 1;
-    > div {
-      margin-left: ${theme.spacings.xsmall};
-    }
   `}
 `
 
 export const MenuNav = styled.div`
   ${({ theme }) => css`
     ${media.greaterThan('medium')`
-			margin-left: ${theme.spacings.small};
+			margin-left: ${theme.spacings.xxlarge};
 		`}
   `}
 `
@@ -102,6 +105,7 @@ export const MenuFull = styled.nav<MenuFullProps>`
     opacity: ${isOpen ? 1 : 0};
     pointer-events: ${isOpen ? 'all' : 'none'};
     visibility: ${isOpen ? 'visible' : 'hidden'};
+
     > svg {
       position: absolute;
       top: 0;
@@ -119,7 +123,7 @@ export const MenuFull = styled.nav<MenuFullProps>`
       flex-direction: column;
     }
     ${MenuLink} {
-      color: ${theme.colors.black};
+      color: ${theme.colors.darkGray};
       font-weight: ${theme.font.bold};
       font-size: ${theme.font.sizes.xlarge};
       margin-bottom: ${theme.spacings.small};

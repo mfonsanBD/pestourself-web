@@ -1,25 +1,47 @@
 import Link from 'next/link'
 
-import Heading from 'components/Heading'
 import Logo from 'components/Logo'
+import Heading from 'components/Heading'
+
+import { LocationOn, CheckBox } from '@styled-icons/material-outlined'
+import { User3 } from '@styled-icons/remix-line/User3'
+
 import * as S from './styles'
 
 const currentYear = new Date().getFullYear()
 
 const Footer = () => (
   <S.Wrapper>
-    <Logo color="black" />
     <S.Content>
-      <S.Column aria-label="contact">
-        <Heading color="black" size="small" lineBottom lineColor="secondary">
-          Contact Us
-        </Heading>
+      <S.Column aria-label="platform-data">
+        <Logo color="white" />
+        <S.RowData>
+          <LocationOn size={24} />
+          <S.Info>
+            <h3>10 Locais</h3>
+            <p>No Rio de Janeiro</p>
+          </S.Info>
+        </S.RowData>
 
-        <a href="mailto:sac@wongames.com">sac@wongames.com</a>
+        <S.RowData>
+          <User3 size={24} />
+          <S.Info>
+            <h3>50 Parceiros</h3>
+            <p>Certificados e prontos para atender você</p>
+          </S.Info>
+        </S.RowData>
+
+        <S.RowData>
+          <CheckBox size={24} />
+          <S.Info>
+            <h3>20 Serviços Fechados</h3>
+            <p>Serviços agendados na plataforma que foram concluídos.</p>
+          </S.Info>
+        </S.RowData>
       </S.Column>
 
       <S.Column aria-labelledby="social-media">
-        <Heading color="black" lineColor="secondary" lineBottom size="small">
+        <Heading color="darkGray" size="small">
           Follow us
         </Heading>
 
@@ -56,7 +78,7 @@ const Footer = () => (
       </S.Column>
 
       <S.Column aria-labelledby="resources">
-        <Heading color="black" lineColor="secondary" lineBottom size="small">
+        <Heading color="darkGray" size="small">
           Links
         </Heading>
 
@@ -74,7 +96,7 @@ const Footer = () => (
       </S.Column>
 
       <S.Column aria-label="location">
-        <Heading color="black" lineColor="secondary" lineBottom size="small">
+        <Heading color="darkGray" size="small">
           Location
         </Heading>
         <span>Lorem ipsum dolor sit.</span>
@@ -83,7 +105,20 @@ const Footer = () => (
       </S.Column>
     </S.Content>
 
-    <S.Copyright>Won Games {currentYear} © All rights reserved.</S.Copyright>
+    <S.Copyright>
+      <S.Div>
+        <p>
+          © Copyright {currentYear} - Pets Tour Self. Todos os Direitos
+          Reservados.
+        </p>
+        <p>
+          Desenvolvido por:{' '}
+          <a href="mikedev.com.br" target="_blank">
+            Mike Santos
+          </a>
+        </p>
+      </S.Div>
+    </S.Copyright>
   </S.Wrapper>
 )
 

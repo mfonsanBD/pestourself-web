@@ -42,7 +42,7 @@ export const Input = styled.input`
     }
 
     &:hover {
-      border-color: ${theme.colors.gray};
+      border-color: ${theme.colors.mediumGray};
       transition: ${theme.transition.fast};
     }
 

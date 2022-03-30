@@ -1,8 +1,8 @@
-import { GameCardProps } from 'components/GameCard'
+// import { GameCardProps } from 'components/GameCard'
 import { createContext, useContext, useEffect, useMemo, useState } from 'react'
 import { useSession } from 'next-auth/client'
 import { useQueryWishlist } from 'graphql/queries/wishlist'
-import { GameMapper } from 'utils/mappers'
+// import { GameMapper } from 'utils/mappers'
 import { QueryWishlist_wishlists_games } from 'graphql/generated/QueryWishlist'
 import { useMutation } from '@apollo/client'
 
@@ -12,7 +12,7 @@ import {
 } from 'graphql/mutations/wishlist'
 
 export type WishlistContextData = {
-  items: GameCardProps[]
+  // items: GameCardProps[]
   isInWishlist: (id: string) => boolean
   addToWishlist: (id: string) => void
   removeFromWishlist: (id: string) => void
@@ -118,7 +118,7 @@ const WishlistProvider = ({ children }: WishlistProviderProps) => {
   return (
     <WishlistContext.Provider
       value={{
-        items: GameMapper(wishlistItems),
+        // items: GameMapper(wishlistItems),
         isInWishlist,
         addToWishlist,
         removeFromWishlist,

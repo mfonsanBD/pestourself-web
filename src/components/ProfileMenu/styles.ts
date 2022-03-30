@@ -20,7 +20,7 @@ export const Nav = styled.nav`
 const linkModifiers = {
   default: (theme: DefaultTheme) => css`
     background: ${theme.colors.white};
-    color: ${theme.colors.black};
+    color: ${theme.colors.darkGray};
   `,
 
   active: (theme: DefaultTheme) => css`

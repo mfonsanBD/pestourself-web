@@ -21,10 +21,10 @@ describe('<Checkbox />', () => {
 
   it('should render with black label', () => {
     render(
-      <Checkbox label="checkbox label" labelFor="check" labelColor="black" />
+      <Checkbox label="checkbox label" labelFor="check" labelColor="darkGray" />
     )
     expect(screen.getByText(/checkbox label/i)).toHaveStyle({
-      color: theme.colors.black
+      color: theme.colors.darkGray
     })
   })
 

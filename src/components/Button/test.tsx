@@ -56,7 +56,7 @@ describe('<Button />', () => {
     const button = screen.getByRole('button', { name: /buy now/i })
     expect(button).toHaveStyle({
       background: 'none',
-      color: '#F231A5'
+      color: '#FEAE11'
     })
     expect(button).toHaveStyleRule('background', 'none', {
       modifier: ':hover'

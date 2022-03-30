@@ -25,7 +25,7 @@ export const Link = styled.a`
     align-items: center;
     text-decoration: none;
     background: ${theme.colors.white};
-    color: ${theme.colors.black};
+    color: ${theme.colors.darkGray};
     padding: ${theme.spacings.xsmall} ${theme.spacings.small};
     transition: background, color, ${theme.transition.default};
 

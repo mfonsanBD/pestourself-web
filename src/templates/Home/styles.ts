@@ -1,35 +1,29 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import media from 'styled-media-query'
 
-import * as HeadingStyles from 'components/Heading/styles'
+export const Cover = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 39.5rem;
 
-export const SectionBanner = styled.section`
-  ${({ theme }) => css`
-    margin: 0 calc(-${theme.grid.gutter} / 2) ${theme.spacings.large};
+  &::after {
+    content: '';
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
 
-    ${media.greaterThan('medium')`
-      margin-bottom: ${theme.spacings.large};
-      position: relative;
-      z-index: ${theme.layers.base};
-    `}
-  `}
-`
+  img {
+    object-fit: cover;
+    object-position: center 35%;
+  }
 
-export const SectionNews = styled.div`
-  ${({ theme }) => css`
-    margin-bottom: calc(${theme.spacings.xxlarge} * 2);
-    ${media.greaterThan('large')`
-      margin-top: -13rem;
-    `}
-    ${media.greaterThan('medium')`
-      margin-bottom: 0;
-      padding-top: 14rem;
-      padding-bottom: 10rem;
-      background-color: ${theme.colors.lightBg};
-      clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 85%);
-      ${HeadingStyles.Wrapper} {
-        color: ${theme.colors.black};
-      }
-    `}
+  ${media.greaterThan('medium')`
+    height: 44.1rem;
   `}
 `

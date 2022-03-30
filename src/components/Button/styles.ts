@@ -60,7 +60,7 @@ export const Wrapper = styled.button<WrapperProps>`
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(180deg, #ff5f5f 0%, #f062c0 100%);
+    background: ${theme.colors.primary};
     color: ${theme.colors.white};
     border: 0;
     cursor: pointer;
@@ -71,9 +71,7 @@ export const Wrapper = styled.button<WrapperProps>`
     text-decoration: none;
 
     &:hover {
-      background: ${minimal
-        ? 'none'
-        : `linear-gradient(180deg, #e35565 0%, #d958e6 100%)`};
+      background: ${minimal ? 'none' : `${darken(0.1, theme.colors.primary)}`};
     }
 
     ${!!size && wrapperModifiers[size](theme)}

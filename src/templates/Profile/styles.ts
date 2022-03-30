@@ -17,7 +17,7 @@ export const Content = styled.div`
   ${({ theme }) => css`
     width: 100%;
     background: ${theme.colors.white};
-    color: ${theme.colors.black};
+    color: ${theme.colors.darkGray};
     padding: ${theme.spacings.small};
   `}
 `

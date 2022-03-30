@@ -4,7 +4,7 @@ export default {
     gutter: '3.2rem'
   },
   border: {
-    radius: '0.4rem'
+    radius: '0.3rem'
   },
   font: {
     family:
@@ -23,16 +23,28 @@ export default {
     }
   },
   colors: {
-    primary: '#F231A5',
-    secondary: '#3CD3C1',
-    mainBg: '#06092B',
-    lightBg: '#F2F2F2',
-    white: '#FAFAFA',
-    black: '#030517',
-    lightGray: '#EAEAEA',
-    gray: '#8F8F8F',
-    darkGray: '#2E2F42',
-    red: '#FF6347'
+    primary: '#FEAE11',
+    background: '#F5F6FA',
+    white: '#FFFFFF',
+    lightGray: '#DDDDDD',
+    mediumGray: '#AAAAAA',
+    darkGray: '#212121',
+    title: '#495057',
+    inputbg: '#EAEAEA',
+    inputph: '#8F8F8F',
+    footerbg: '#323232',
+    responses: {
+      danger: '#DC3545',
+      sucess: '#198754',
+      warning: '#FF8F00'
+    },
+    ratings: {
+      verygood: '#3ECE7E',
+      average: '#F4B34D',
+      good: '#97C47F',
+      poor: '#ED9361',
+      terrible: '#E46D78'
+    }
   },
   spacings: {
     xxsmall: '0.8rem',

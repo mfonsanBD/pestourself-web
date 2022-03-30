@@ -1,15 +1,7 @@
-import gamesMock from 'components/GameCardSlider/mock'
-import highlightMock from 'components/Highlight/mock'
 import { WishlistContextDefaultValues } from 'hooks/use-wishlist'
 import 'session.mock'
 import { render, screen } from 'utils/test-utils'
 import Wishlist from '.'
-
-const props = {
-  recommendedTitle: 'You may like these games',
-  recommendedHighlight: highlightMock,
-  recommendedGames: gamesMock
-}
 
 jest.mock('templates/Base', () => ({
   __esModule: true,
@@ -18,44 +10,25 @@ jest.mock('templates/Base', () => ({
   }
 }))
 
-jest.mock('components/Showcase', () => ({
-  __esModule: true,
-  default: function Mock() {
-    return <div data-testid="Mock Showcase" />
-  }
-}))
-
 describe('<Wishlist />', () => {
   it('should render correctly', () => {
     const wishlistProviderProps = {
-      ...WishlistContextDefaultValues,
-      items: [gamesMock[0]]
+      ...WishlistContextDefaultValues
+      // items: [gamesMock[0]]
     }
-    render(<Wishlist {...props} />, { wishlistProviderProps })
+    render(<Wishlist />, { wishlistProviderProps })
 
     expect(
-      screen.getByRole('heading', { name: /favoritos/i })
+      screen.getByRole('heading', { name: 'Favoritos' })
     ).toBeInTheDocument()
-
-    expect(screen.getByText(/population zero/i)).toBeInTheDocument()
-    expect(screen.getByTestId('Mock Showcase')).toBeInTheDocument()
   })
 
   it('should render empty when there are no games', () => {
     const wishlistProviderProps = {
-      ...WishlistContextDefaultValues,
-      items: []
+      ...WishlistContextDefaultValues
+      // items: []
     }
-    render(
-      <Wishlist
-        recommendedTitle="You may like these games"
-        recommendedGames={gamesMock}
-        recommendedHighlight={highlightMock}
-      />,
-      { wishlistProviderProps }
-    )
-
-    expect(screen.queryByText(/population zero/i)).not.toBeInTheDocument()
+    render(<Wishlist />, { wishlistProviderProps })
 
     expect(
       screen.getByRole('heading', {

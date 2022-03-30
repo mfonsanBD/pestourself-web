@@ -14,11 +14,11 @@ describe('<Radio />', () => {
   })
 
   it('should render with black label', () => {
-    render(<Radio label="Radio" labelColor="black" />)
+    render(<Radio label="Radio" labelColor="darkGray" />)
 
     const label = screen.getByText('Radio')
     expect(label).toBeInTheDocument()
-    expect(label).toHaveStyle({ color: theme.colors.black })
+    expect(label).toHaveStyle({ color: theme.colors.darkGray })
   })
 
   it('should render without label', () => {
