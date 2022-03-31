@@ -2,9 +2,9 @@ export default {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://won-games-self.vercel.app/',
-    site_name: 'Won Games',
-    title: 'Won Games'
+    url: 'https://petstourself.mikedev.com.br/',
+    site_name: 'Pets Tour Self',
+    title: 'Pets Tour Self'
   },
   twitter: {
     handle: '@MikeFnscdSantos',

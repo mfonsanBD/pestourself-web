@@ -7,7 +7,7 @@ describe('<Container />', () => {
   it('should render container', () => {
     const { container } = render(
       <Container>
-        <span>Won Games</span>
+        <span>Pets Tour Self</span>
       </Container>
     )
 
@@ -30,7 +30,7 @@ describe('<Container />', () => {
         class="c0"
       >
         <span>
-          Won Games
+          Pets Tour Self
         </span>
       </div>
     `)

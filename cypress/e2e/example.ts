@@ -15,8 +15,8 @@ describe.skip('Cypress TS', () => {
     cy.get('.dark').should('exist')
   })
 
-  it('should visit won games site', () => {
-    cy.visit('https://won-games-self.vercel.app')
+  it('should visit pets tour self site', () => {
+    cy.visit('https://petstourself.mikedev.com.br/')
     cy.findByText(/Defy Death 1/i).should('exist')
   });
 })

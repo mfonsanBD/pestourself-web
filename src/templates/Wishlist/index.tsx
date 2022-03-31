@@ -1,14 +1,17 @@
-import { Container } from 'components/Container'
-import { Divider } from 'components/Divider'
+import { NextSeo } from 'next-seo'
+
 import Empty from 'components/Empty'
 import Heading from 'components/Heading'
-import { NextSeo } from 'next-seo'
+import { Divider } from 'components/Divider'
+import { Container } from 'components/Container'
+
 import Base from 'templates/Base'
+import { SITE_NAME } from 'templates/Home'
 
 const Wishlist = () => {
   return (
     <Base>
-      <NextSeo title="Favoritos - Won Games" />
+      <NextSeo title={`Favoritos - ${SITE_NAME}`} />
       <Container>
         <Heading title="Favoritos" size="small" />
 

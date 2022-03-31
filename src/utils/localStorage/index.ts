@@ -1,4 +1,4 @@
-const APP_KEY = 'WONGAMES'
+const APP_KEY = 'PETSTOURSELF'
 
 export function getStorageItem(key: string) {
   //no server/static não tem window

@@ -1,14 +1,18 @@
-import { Done } from '@styled-icons/material-outlined/Done'
-import { Container } from 'components/Container'
-import { NextSeo } from 'next-seo'
 import Link from 'next/link'
+import { NextSeo } from 'next-seo'
+
 import Base from 'templates/Base'
+import { SITE_NAME } from 'templates/Home'
+
+import { Container } from 'components/Container'
+
 import * as S from './styles'
+import { Done } from '@styled-icons/material-outlined/Done'
 
 const Success = () => {
   return (
     <Base>
-      <NextSeo title="Sucesso - Won Games" />
+      <NextSeo title={`Sucesso - ${SITE_NAME}`} />
       <Container>
         <S.Wrapper>
           <S.Heading>Compra realizada com sucesso!</S.Heading>
