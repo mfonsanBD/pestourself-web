@@ -11,9 +11,7 @@ export type FormProfileProps = {
 
 const FormProfile = ({ email, username }: FormProfileProps) => (
   <>
-    <Heading size="small" color="darkGray">
-      Meu Perfil
-    </Heading>
+    <Heading title="Meu Perfil" size="small" color="darkGray" />
 
     <S.Form>
       <TextField

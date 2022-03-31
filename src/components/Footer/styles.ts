@@ -1,8 +1,9 @@
+import { darken } from 'polished'
+import media from 'styled-media-query'
 import styled, { css } from 'styled-components'
 
 import * as HeadingStyles from 'components/Heading/styles'
-import media from 'styled-media-query'
-import { darken } from 'polished'
+import * as ButtonStyles from 'components/Button/styles'
 
 export const Wrapper = styled.footer`
   ${HeadingStyles.Wrapper} {
@@ -35,17 +36,27 @@ export const Content = styled(Margens)`
 
 export const Column = styled.div`
   ${({ theme }) => css`
-    a,
-    span {
+    a {
       display: block;
-      color: ${theme.colors.darkGray};
+      color: ${theme.colors.white};
       text-decoration: none;
       margin-bottom: ${theme.spacings.xxsmall};
       font-size: ${theme.font.sizes.small};
     }
 
+    span {
+      font-size: ${theme.font.sizes.xsmall};
+      color: ${theme.colors.white};
+    }
+
+    ${ButtonStyles.Wrapper} {
+      text-transform: uppercase;
+      font-weight: ${theme.font.bold};
+      font-size: ${theme.font.sizes.medium};
+    }
+
     a:hover {
-      text-decoration: underline;
+      color: ${darken(0.2, theme.colors.white)};
     }
   `}
 `
@@ -62,6 +73,7 @@ export const RowData = styled.div`
     }
   `}
 `
+
 export const Info = styled.div`
   ${({ theme }) => css`
     h3 {
@@ -102,6 +114,38 @@ export const Div = styled(Margens)`
     a {
       color: ${theme.colors.primary};
       text-decoration: none;
+
+      &:hover {
+        color: ${darken(0.1, theme.colors.primary)};
+      }
+    }
+  `}
+`
+
+export const Separator = styled.div`
+  ${({ theme }) => css`
+    margin-top: ${theme.spacings.large};
+  `}
+`
+
+export const FooterTitle = styled.h3`
+  ${({ theme }) => css`
+    margin-bottom: ${theme.spacings.small};
+    color: ${theme.colors.primary};
+  `}
+`
+
+export const UseTermsArea = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0 2rem;
+
+    a {
+      display: inline-block;
+      font-size: ${theme.font.sizes.xsmall};
+      color: ${theme.colors.primary};
+      margin-bottom: 0;
 
       &:hover {
         color: ${darken(0.1, theme.colors.primary)};

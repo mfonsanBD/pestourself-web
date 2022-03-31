@@ -14,6 +14,8 @@ describe('<Home />', () => {
   it('should render heading', () => {
     render(<Home />)
 
-    expect(screen.getByRole('heading', { name: /home/i })).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', { name: /campos de Busca de parceiros/i })
+    ).toBeInTheDocument()
   })
 })

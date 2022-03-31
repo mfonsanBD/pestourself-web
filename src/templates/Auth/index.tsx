@@ -6,17 +6,18 @@ import * as S from './styles'
 
 type AuthProps = {
   title: string
+  backTitle?: string
   children: React.ReactNode
 }
 
 const currentYear = new Date().getFullYear()
 
-const Auth = ({ title, children }: AuthProps) => (
+const Auth = ({ title, backTitle, children }: AuthProps) => (
   <S.Wrapper>
     <S.BannerBlock>
       <Image
         src="/img/auth-bg.jpg"
-        alt="Won Games Auth Page"
+        alt="Pets Tour Self Auth Page"
         layout="fill"
         objectFit="cover"
       />
@@ -28,9 +29,12 @@ const Auth = ({ title, children }: AuthProps) => (
         </Link>
 
         <div>
-          <Heading size="huge" color="white">
-            Os maiores cuidadores de Pet em um só lugar
-          </Heading>
+          <Heading
+            size="large"
+            color="white"
+            title="Os maiores cuidadores de Pet em um só lugar"
+            align="left"
+          />
           <S.Subtitle>
             <strong>Pets Tour Self</strong>, a maior e mais completa plataforma
             para cuidadores.
@@ -54,7 +58,13 @@ const Auth = ({ title, children }: AuthProps) => (
           </Link>
         </S.LogoBox>
 
-        <Heading color="darkGray">{title}</Heading>
+        <Heading
+          color="darkGray"
+          title={title}
+          backTitle={backTitle}
+          size="medium"
+          align="left"
+        />
 
         {children}
       </S.ContentWrapper>

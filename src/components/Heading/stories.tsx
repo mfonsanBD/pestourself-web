@@ -5,7 +5,13 @@ export default {
   title: 'Heading',
   component: Heading,
   argTypes: {
-    children: {
+    title: {
+      type: 'string'
+    },
+    backTitle: {
+      type: 'string'
+    },
+    description: {
       type: 'string'
     }
   }
@@ -14,6 +20,9 @@ export default {
 export const Default: Story<HeadingProps> = (args) => <Heading {...args} />
 
 Default.args = {
-  children: 'Most Populars',
+  title: 'Parceiros em Destaques',
+  backTitle: 'Escolha os Melhores',
+  description:
+    'Esses são os parceiros com melhor avaliação em nossa plataforma',
   color: 'darkGray'
 }

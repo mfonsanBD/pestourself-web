@@ -3,11 +3,13 @@ import media from 'styled-media-query'
 
 export const Wrapper = styled.menu<MenuFullProps>`
   ${({ theme, isOpen }) => css`
+    width: 100%;
+    max-width: ${theme.grid.container};
+    position: absolute;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: ${theme.spacings.small} 0;
-    position: relative;
     z-index: ${isOpen ? theme.layers.menu : `calc(${theme.layers.menu} - 1)`};
   `}
 `

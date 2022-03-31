@@ -1,52 +1,63 @@
 import styled, { css, DefaultTheme } from 'styled-components'
-import media from 'styled-media-query'
 import { HeadingProps } from '.'
+
+type WrapperProps = Pick<HeadingProps, 'color' | 'size' | 'backTitle' | 'align'>
 
 export const wrapperModifiers = {
   small: (theme: DefaultTheme) => css`
     font-size: ${theme.font.sizes.medium};
-
-    &::after {
-      width: 3rem;
-    }
   `,
 
   medium: (theme: DefaultTheme) => css`
-    font-size: ${theme.font.sizes.xlarge};
+    font-size: 2.4rem;
 
-    ${media.greaterThan('medium')`
-      font-size: ${theme.font.sizes.xxlarge};
-    `}
+    h2::after {
+      margin-top: -2rem;
+      font-size: ${theme.font.sizes.huge};
+    }
   `,
 
-  huge: (theme: DefaultTheme) => css`
-    font-size: ${theme.font.sizes.huge};
-  `,
+  large: (theme: DefaultTheme) => css`
+    font-size: 3.6rem;
 
-  lineLeft: (theme: DefaultTheme) => css`
-    padding-left: ${theme.spacings.xxsmall};
-    border-left: 0.7rem solid ${theme.colors.primary};
-  `,
-
-  lineBottom: (theme: DefaultTheme) => css`
-    position: relative;
-    margin-bottom: ${theme.spacings.small};
-
-    &::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 5rem;
-      border-bottom: 0.5rem solid ${theme.colors.primary};
+    h2::after {
+      margin-top: -3rem;
+      font-size: calc(${theme.font.sizes.huge} * 1.5);
     }
   `
 }
 
-export const Wrapper = styled.h2<HeadingProps>`
-  ${({ theme, color, size }) => css`
-    color: ${theme.colors[color!]};
+export const Wrapper = styled.div<WrapperProps>`
+  ${({ theme, color, size, backTitle, align }) => css`
+    text-align: ${align};
+    line-height: 1;
 
     ${!!size && wrapperModifiers[size](theme)}
+
+    h2 {
+      color: ${theme.colors[color!]};
+      padding: 0;
+      margin: 0;
+      position: relative;
+
+      &::after {
+        content: '${backTitle}';
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        opacity: 0.1;
+        ${!!size && wrapperModifiers[size](theme)}
+      }
+    }
+
+    p {
+      font-size: ${theme.font.sizes.medium};
+      color: ${color === 'white'
+        ? theme.colors.white
+        : theme.colors.mediumGray};
+    }
   `}
 `

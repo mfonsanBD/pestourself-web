@@ -30,16 +30,20 @@ describe('<TextContent />', () => {
   it('should render the title and content', () => {
     render(<TextContent {...props} />)
 
-    const wrapper = screen.getByRole('heading', {
+    const title = screen.getByRole('heading', {
       name: /description/i
-    }).parentElement
+    })
 
-    expect(wrapper).toHaveStyle({
+    const content = screen.getByRole('heading', {
+      name: /content/i
+    })
+
+    expect(title).toHaveStyle({
       color: '#FFFFFF' // theme.colors.white
     })
 
-    expect(wrapper).toHaveStyleRule('color', '#212121', {
-      media: '(min-width: 768px)'
+    expect(content).toHaveStyle({
+      color: '#FFFFFF'
     })
   })
 })

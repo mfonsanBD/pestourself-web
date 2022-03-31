@@ -8,7 +8,7 @@ export type TextContentProps = {
 
 const TextContent = ({ title, content }: TextContentProps) => (
   <S.Wrapper data-cy="content">
-    {!!title && <Heading>{title}</Heading>}
+    {!!title && <Heading title={title} color="darkGray" />}
 
     <section dangerouslySetInnerHTML={{ __html: content }} />
   </S.Wrapper>

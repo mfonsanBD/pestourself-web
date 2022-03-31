@@ -15,8 +15,8 @@ jest.mock('templates/Base', () => ({
 
 jest.mock('components/Heading', () => ({
   __esModule: true,
-  default: function Mock({ children }: { children: React.ReactNode }) {
-    return <div data-testid="Mock Heading">{children}</div>
+  default: function Mock({ title }: { title: string }) {
+    return <div data-testid="Mock Heading">{title}</div>
   }
 }))
 

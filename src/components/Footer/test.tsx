@@ -7,17 +7,15 @@ describe('<Footer />', () => {
     render(<Footer />)
 
     expect(
-      screen.getByRole('heading', { name: /Contact Us/i })
+      screen.getByRole('heading', { name: /menu do site/i })
     ).toBeInTheDocument()
 
     expect(
-      screen.getByRole('heading', { name: /Follow Us/i })
+      screen.getByRole('heading', { name: /sobre nós/i })
     ).toBeInTheDocument()
 
-    expect(screen.getByRole('heading', { name: /Links/i })).toBeInTheDocument()
-
     expect(
-      screen.getByRole('heading', { name: /Location/i })
+      screen.getByRole('heading', { name: /junte-se a nós/i })
     ).toBeInTheDocument()
   })
 })

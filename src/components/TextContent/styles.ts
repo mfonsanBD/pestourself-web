@@ -1,8 +1,6 @@
 import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
 
-import * as HeadingStyles from 'components/Heading/styles'
-
 export const Wrapper = styled.div`
   ${({ theme }) => css`
     color: ${theme.colors.white};
@@ -21,7 +19,7 @@ export const Wrapper = styled.div`
     h6 {
       color: ${theme.colors.white};
       margin: ${theme.spacings.xsmall} 0;
-      ${HeadingStyles.wrapperModifiers.lineLeft(theme)};
+
       ${media.greaterThan('medium')`
         color: ${theme.colors.darkGray};
       `}

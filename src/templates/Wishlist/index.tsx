@@ -10,7 +10,7 @@ const Wishlist = () => {
     <Base>
       <NextSeo title="Favoritos - Won Games" />
       <Container>
-        <Heading>Favoritos</Heading>
+        <Heading title="Favoritos" size="small" />
 
         <Empty
           title="Sua lista de favoritos está vazia"

@@ -15,7 +15,7 @@ const Profile = ({ children }: ProfileTemplateProps) => {
   return (
     <Base>
       <Container>
-        <Heading>Meu Perfil</Heading>
+        <Heading title="Meu Perfil" size="small" />
 
         <S.Main>
           <ProfileMenu activeLink={asPath} />

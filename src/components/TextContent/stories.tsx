@@ -4,7 +4,7 @@ import TextContent, { TextContentProps } from '.'
 import textMock from './mock'
 
 export default {
-  title: 'Game/TextContent',
+  title: 'Parceiro/TextContent',
   component: TextContent,
   parameters: {
     backgrounds: {
