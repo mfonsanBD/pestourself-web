@@ -18,6 +18,7 @@ export const Cover = styled.div`
     bottom: 0;
     right: 0;
     left: 0;
+    z-index: 10;
   }
 
   img {
@@ -32,21 +33,32 @@ export const Cover = styled.div`
 
 export const Filters = styled.div`
   ${({ theme }) => css`
-    width: 100%;
+    width: 91.5%;
     position: absolute;
     max-width: ${theme.grid.container};
     background-color: ${theme.colors.white};
+    padding: ${theme.spacings.small};
     bottom: 0;
     border-radius: ${theme.border.radius};
-    padding: ${theme.spacings.medium};
     margin-bottom: -7rem;
-    z-index: ${theme.layers.modal};
+    z-index: calc(${theme.layers.menu} - 1);
+
+    ${media.greaterThan('medium')`
+      width: 100%;
+      padding: ${theme.spacings.medium};
+    `}
 
     .react-tabs__tab-list {
       list-style: none;
       display: flex;
-      gap: 3rem;
+      gap: 1rem;
+      justify-content: space-between;
       margin-bottom: ${theme.spacings.xsmall};
+
+      ${media.greaterThan('medium')`
+        justify-content: flex-start;
+        gap: 3rem;
+      `}
     }
 
     .react-tabs__tab {

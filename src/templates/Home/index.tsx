@@ -28,8 +28,8 @@ const Home = () => (
       <S.Filters>
         <Tabs>
           <TabList>
-            <Tab>Buscar Parceiros para Agendar</Tab>
-            <Tab>Buscar Anúncio de um Parceiros</Tab>
+            <Tab>Buscar um Self</Tab>
+            <Tab>Buscar Anunciante</Tab>
           </TabList>
 
           <TabPanel>

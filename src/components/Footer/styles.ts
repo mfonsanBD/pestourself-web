@@ -24,7 +24,7 @@ const Margens = styled.div`
 export const Content = styled(Margens)`
   ${({ theme }) => css`
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: ${theme.grid.gutter};
     margin-top: ${theme.spacings.medium};
 
@@ -101,14 +101,24 @@ export const Copyright = styled.div`
 export const Div = styled(Margens)`
   ${({ theme }) => css`
     display: flex;
+    flex-direction: column;
+    gap: 1rem;
     align-items: center;
     justify-content: space-between;
+
+    ${media.greaterThan('medium')`
+      flex-direction: row;
+    `}
 
     p {
       margin: 0;
       padding: 0;
       color: ${theme.colors.white};
       font-size: ${theme.font.sizes.xsmall};
+
+      ${media.lessThan('medium')`
+        text-align: center;
+      `}
     }
 
     a {

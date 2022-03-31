@@ -3,7 +3,7 @@ import media from 'styled-media-query'
 
 export const Wrapper = styled.menu<MenuFullProps>`
   ${({ theme, isOpen }) => css`
-    width: 100%;
+    width: 91.5%;
     max-width: ${theme.grid.container};
     position: absolute;
     display: flex;
@@ -11,6 +11,13 @@ export const Wrapper = styled.menu<MenuFullProps>`
     justify-content: space-between;
     padding: ${theme.spacings.small} 0;
     z-index: ${isOpen ? theme.layers.menu : `calc(${theme.layers.menu} - 1)`};
+    margin-top: 1rem;
+
+    ${media.greaterThan('medium')`
+      width: 100%;
+      padding: ${theme.spacings.medium};
+      margin-top: 0;
+    `}
   `}
 `
 
@@ -18,6 +25,7 @@ export const LogoWrapper = styled.div`
   ${media.lessThan('medium')`
     position: absolute;
     left: 50%;
+    top: 1rem;
     transform: translateX(-50%);
   `}
 `

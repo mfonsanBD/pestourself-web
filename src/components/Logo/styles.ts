@@ -5,12 +5,12 @@ import { LogoProps } from '.'
 const wrapperModifiers = {
   hideOnMobile: () => css`
     ${media.lessThan('medium')`
-      width: 5.8rem;
-      height: 6rem;
+      width: 6rem;
+      height: 7rem;
       display: inline-block;
 
       svg{
-        height: 6rem;
+        height: 7rem;
         pointer-events: none;
       }
 
