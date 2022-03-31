@@ -1,6 +1,6 @@
 {
-  "name": "Won Games",
-  "short_name": "Won Games",
+  "name": "Pets Tour Self",
+  "short_name": "Pets Tour Self",
   "icons": [
     {
       "src": "/img/icon-192.png",
@@ -13,9 +13,9 @@
       "sizes": "512x512"
     }
   ],
-  "background_color": "#06092B",
-  "description": "All your favorite games in one place, WON is the best and most complete gaming platform.",
+  "background_color": "#FEAE11",
+  "description": "Os maiores cuidadores de Pet em um só lugar. Pets Tour Self, a maior e mais completa plataforma para cuidadores.",
   "display": "fullscreen",
   "start_url": "/",
-  "theme_color": "#06092B"
+  "theme_color": "#FEAE11"
 }

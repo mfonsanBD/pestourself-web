@@ -1,6 +1,8 @@
-import FormResetPassword from 'components/FormResetPassword'
 import { NextSeo } from 'next-seo'
+
 import Auth from 'templates/Auth'
+
+import FormResetPassword from 'components/FormResetPassword'
 
 export default function ResetPassword() {
   return (

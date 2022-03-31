@@ -1,8 +1,10 @@
+import { GetServerSidePropsContext } from 'next'
+
 import Wishlist from 'templates/Wishlist'
 
 import { initializeApollo } from 'utils/apollo'
 import protectedRoutes from 'utils/protected-routes'
-import { GetServerSidePropsContext } from 'next'
+
 import {
   QueryWishlist,
   QueryWishlistVariables

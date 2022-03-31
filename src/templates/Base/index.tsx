@@ -1,6 +1,8 @@
 import { useSession } from 'next-auth/client'
-import Footer from 'components/Footer'
+
 import Menu from 'components/Menu'
+import Footer from 'components/Footer'
+
 import * as S from './styles'
 
 export type BaseTemplateProps = {

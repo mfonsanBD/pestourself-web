@@ -1,7 +1,9 @@
-import Heading from 'components/Heading'
-import Logo from 'components/Logo'
-import Image from 'next/image'
 import Link from 'next/link'
+import Image from 'next/image'
+
+import Logo from 'components/Logo'
+import Heading from 'components/Heading'
+
 import * as S from './styles'
 
 type AuthProps = {

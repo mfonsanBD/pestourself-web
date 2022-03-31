@@ -1,14 +1,18 @@
-import { ApolloProvider } from '@apollo/client'
-import { WishlistProvider } from 'hooks/use-wishlist'
-import { Provider as AuthProvider } from 'next-auth/client'
-import { DefaultSeo } from 'next-seo'
-import { AppProps } from 'next/app'
 import Head from 'next/head'
+import { AppProps } from 'next/app'
+import { DefaultSeo } from 'next-seo'
 import NextNprogress from 'nextjs-progressbar'
-import { ThemeProvider } from 'styled-components'
-import GlobalStyles from 'styles/global'
+import { ApolloProvider } from '@apollo/client'
+import { Provider as AuthProvider } from 'next-auth/client'
+
 import theme from 'styles/theme'
+import GlobalStyles from 'styles/global'
+import { ThemeProvider } from 'styled-components'
+
 import { useApollo } from 'utils/apollo'
+
+import { WishlistProvider } from 'hooks/use-wishlist'
+
 import SEO from '../../next-seo.config'
 
 function App({ Component, pageProps }: AppProps) {
@@ -23,10 +27,10 @@ function App({ Component, pageProps }: AppProps) {
               <link rel="shortcut icon" href="/img/icon-512.png" />
               <link rel="apple-touch-icon" href="/img/icon-512.png" />
               <link rel="manifest" href="/manifest.json" />
-              <meta name="theme-color" content="#06092B" />
+              <meta name="theme-color" content="#FEAE11" />
               <meta
                 name="description"
-                content="All your favorite games in one place, WON is the best and most complete gaming platform."
+                content="Os maiores cuidadores de Pet em um só lugar. Pets Tour Self, a maior e mais completa plataforma para cuidadores."
               />
             </Head>
             <DefaultSeo {...SEO} />
