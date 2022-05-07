@@ -1,28 +1,21 @@
-import NextAuth, { User } from 'next-auth'
-import { Session } from 'next-auth'
-import { JWT } from 'next-auth/jwt'
-import Providers from 'next-auth/providers'
-import { NextApiRequest, NextApiResponse } from 'next-auth/internals/utils'
+import NextAuth, { NextAuthOptions } from 'next-auth'
+import { NextApiRequest, NextApiResponse } from 'next'
+import CredentialsProvider from 'next-auth/providers/credentials'
 
-type AuthorizeProps = {
-  email: string
-  password: string
-}
-
-const options = {
+const options: NextAuthOptions = {
   pages: {
     signIn: '/sign-in'
   },
   providers: [
-    Providers.Credentials({
-      name: 'Sign-in',
+    CredentialsProvider({
+      name: 'Sing-in',
       credentials: {},
-      async authorize({ email, password }: AuthorizeProps) {
+      async authorize(credentials) {
         const response = await fetch(
           `${process.env.NEXT_PUBLIC_API_URL}/auth/local`,
           {
             method: 'POST',
-            body: new URLSearchParams({ identifier: email, password })
+            body: new URLSearchParams(credentials)
           }
         )
 
@@ -37,17 +30,17 @@ const options = {
     })
   ],
   callbacks: {
-    session: async (session: Session, user: User) => {
+    session: async ({ session, user }) => {
       session.jwt = user.jwt
       session.id = user.id
 
       return Promise.resolve(session)
     },
-    jwt: async (token: JWT, user: User) => {
+    jwt: async ({ token, user }) => {
       if (user) {
         token.id = user.id
         token.email = user.email
-        token.name = user.username as string
+        token.name = user.name
         token.jwt = user.jwt
       }
 

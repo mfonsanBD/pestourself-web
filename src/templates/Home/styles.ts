@@ -76,7 +76,19 @@ export const Filters = styled.div`
 
 export const Main = styled.main`
   position: relative;
-  padding: 18rem 0 12rem;
 `
 
-export const SectionParceiros = styled.section``
+const Section = styled.section`
+  padding-top: 12rem;
+  padding-bottom: 12rem;
+`
+
+export const SectionParceiros = styled(Section)`
+  margin: 6rem 0 0;
+`
+
+export const SectionLocais = styled(Section)`
+  ${({ theme }) => css`
+    background-color: ${theme.colors.white};
+  `}
+`

@@ -3,7 +3,9 @@ import { AppProps } from 'next/app'
 import { DefaultSeo } from 'next-seo'
 import NextNprogress from 'nextjs-progressbar'
 import { ApolloProvider } from '@apollo/client'
-import { Provider as AuthProvider } from 'next-auth/client'
+import { SessionProvider } from 'next-auth/react'
+
+export const SITE_NAME = 'Pets Tour Self'
 
 import theme from 'styles/theme'
 import GlobalStyles from 'styles/global'
@@ -15,11 +17,11 @@ import { WishlistProvider } from 'hooks/use-wishlist'
 
 import SEO from '../../next-seo.config'
 
-function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const client = useApollo(pageProps.initialApolloState)
 
   return (
-    <AuthProvider session={pageProps.session}>
+    <SessionProvider session={session}>
       <ApolloProvider client={client}>
         <ThemeProvider theme={theme}>
           <WishlistProvider>
@@ -46,7 +48,7 @@ function App({ Component, pageProps }: AppProps) {
           </WishlistProvider>
         </ThemeProvider>
       </ApolloProvider>
-    </AuthProvider>
+    </SessionProvider>
   )
 }
 

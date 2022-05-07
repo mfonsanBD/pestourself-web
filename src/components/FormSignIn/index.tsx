@@ -2,7 +2,7 @@ import { Email, ErrorOutline, Lock } from '@styled-icons/material-outlined'
 import Button from 'components/Button'
 import { FormError, FormLink, FormLoading, FormWrapper } from 'components/Form'
 import TextField from 'components/TextField'
-import { signIn } from 'next-auth/client'
+import { signIn } from 'next-auth/react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
@@ -35,7 +35,7 @@ const FormSignIn = () => {
 
     setFieldError({})
 
-    const result = await signIn('credentials', {
+    const result = await signIn<'credentials'>('credentials', {
       ...values,
       redirect: false,
       callbackUrl: `${window.location.origin}${query?.callbackUrl || ''}`

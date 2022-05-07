@@ -1,4 +1,4 @@
-import { useSession } from 'next-auth/client'
+import { useSession } from 'next-auth/react'
 
 import Menu from 'components/Menu'
 import Footer from 'components/Footer'
@@ -10,7 +10,7 @@ export type BaseTemplateProps = {
 }
 
 const Base = ({ children }: BaseTemplateProps) => {
-  const [session, loading] = useSession()
+  const { data: session, status: loading } = useSession()
   return (
     <S.Wrapper>
       <S.SectionMenu>

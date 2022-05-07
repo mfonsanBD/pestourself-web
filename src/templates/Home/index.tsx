@@ -2,12 +2,12 @@ import Image from 'next/image'
 import { NextSeo } from 'next-seo'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 
-export const SITE_NAME = 'Pets Tour Self'
+import Heading from 'components/Heading'
 
 import Base from 'templates/Base'
+import { SITE_NAME } from 'pages/_app'
 
 import * as S from './styles'
-import { Container } from 'components/Container'
 
 const Home = () => (
   <Base>
@@ -44,8 +44,26 @@ const Home = () => (
 
     <S.Main>
       <S.SectionParceiros>
-        <Container>Conteúdo da Página Inicial</Container>
+        <Heading
+          title="Parceiros em Destaque"
+          align="center"
+          color="darkGray"
+          backTitle="Escolha os Melhores"
+          description="Esses são os parceiros com melhor avaliação em nossa plataforma"
+          size="large"
+        />
       </S.SectionParceiros>
+
+      <S.SectionLocais>
+        <Heading
+          title="Os Locais com mais Parceiros"
+          align="center"
+          color="darkGray"
+          backTitle="Onde Encontrar?"
+          description="Locais que tem mais parceiros disponíveis para te atender"
+          size="large"
+        />
+      </S.SectionLocais>
     </S.Main>
   </Base>
 )

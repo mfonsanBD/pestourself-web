@@ -3,7 +3,7 @@ import { NextSeo } from 'next-seo'
 import Empty from 'components/Empty'
 
 import Base from 'templates/Base'
-import { SITE_NAME } from 'templates/Home'
+import { SITE_NAME } from './_app'
 
 export default function Index() {
   return (

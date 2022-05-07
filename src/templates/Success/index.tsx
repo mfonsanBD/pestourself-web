@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { NextSeo } from 'next-seo'
 
 import Base from 'templates/Base'
-import { SITE_NAME } from 'templates/Home'
+import { SITE_NAME } from 'pages/_app'
 
 import { Container } from 'components/Container'
 

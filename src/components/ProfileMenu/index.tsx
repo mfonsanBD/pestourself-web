@@ -3,7 +3,7 @@ import {
   ExitToApp,
   FormatListBulleted
 } from '@styled-icons/material-outlined'
-import { signOut } from 'next-auth/client'
+import { signOut } from 'next-auth/react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import * as S from './styles'

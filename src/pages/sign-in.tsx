@@ -3,7 +3,7 @@ import { NextSeo } from 'next-seo'
 import FormSignIn from 'components/FormSignIn'
 
 import Auth from 'templates/Auth'
-import { SITE_NAME } from 'templates/Home'
+import { SITE_NAME } from './_app'
 
 export default function SignIn() {
   return (

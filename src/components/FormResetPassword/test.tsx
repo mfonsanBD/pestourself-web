@@ -1,5 +1,5 @@
 import userEvent from '@testing-library/user-event'
-import { signIn } from 'next-auth/client'
+import { signIn } from 'next-auth/react'
 import 'server.mock'
 import { render, screen, waitFor } from 'utils/test-utils'
 import FormResetPassword from '.'

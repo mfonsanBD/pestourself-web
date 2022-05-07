@@ -10,7 +10,7 @@ import {
 import { QUERY_PROFILE_ME } from 'graphql/queries/profile'
 
 import Profile from 'templates/Profile'
-import { SITE_NAME } from 'templates/Home'
+import { SITE_NAME } from 'pages/_app'
 
 import { initializeApollo } from 'utils/apollo'
 import protectedRoutes from 'utils/protected-routes'

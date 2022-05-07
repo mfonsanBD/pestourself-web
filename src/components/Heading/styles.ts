@@ -5,24 +5,30 @@ type WrapperProps = Pick<HeadingProps, 'color' | 'size' | 'backTitle' | 'align'>
 
 export const wrapperModifiers = {
   small: (theme: DefaultTheme) => css`
-    font-size: ${theme.font.sizes.medium};
+    h2 {
+      font-size: ${theme.font.sizes.medium};
+    }
   `,
 
   medium: (theme: DefaultTheme) => css`
-    font-size: 2.4rem;
+    h2 {
+      font-size: calc(${theme.font.sizes.xlarge} + 0.4rem);
 
-    h2::after {
-      margin-top: -2rem;
-      font-size: ${theme.font.sizes.huge};
+      &::after {
+        margin-top: -1.5rem;
+        font-size: calc(${theme.font.sizes.xlarge} * 1.7);
+      }
     }
   `,
 
   large: (theme: DefaultTheme) => css`
-    font-size: 3.6rem;
+    h2 {
+      font-size: calc(${theme.font.sizes.xlarge} + 1.6rem);
 
-    h2::after {
-      margin-top: -3rem;
-      font-size: calc(${theme.font.sizes.huge} * 1.5);
+      &::after {
+        margin-top: -2rem;
+        font-size: ${theme.font.sizes.huge};
+      }
     }
   `
 }
@@ -31,7 +37,6 @@ export const Wrapper = styled.div<WrapperProps>`
   ${({ theme, color, size, backTitle, align }) => css`
     text-align: ${align};
     line-height: 1;
-
     ${!!size && wrapperModifiers[size](theme)}
 
     h2 {
@@ -49,12 +54,12 @@ export const Wrapper = styled.div<WrapperProps>`
         bottom: 0;
         right: 0;
         opacity: 0.1;
-        ${!!size && wrapperModifiers[size](theme)}
       }
     }
 
     p {
       font-size: ${theme.font.sizes.medium};
+      margin-top: 1rem;
       color: ${color === 'white'
         ? theme.colors.white
         : theme.colors.mediumGray};

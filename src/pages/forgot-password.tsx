@@ -1,7 +1,7 @@
 import { NextSeo } from 'next-seo'
 
 import Auth from 'templates/Auth'
-import { SITE_NAME } from 'templates/Home'
+import { SITE_NAME } from './_app'
 
 import FormForgotPassword from 'components/FormForgotPassword'
 

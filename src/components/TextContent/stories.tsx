@@ -8,7 +8,7 @@ export default {
   component: TextContent,
   parameters: {
     backgrounds: {
-      default: 'won-dark'
+      default: 'dark'
     }
   },
   args: { ...textMock }

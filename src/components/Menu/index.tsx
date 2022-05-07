@@ -4,7 +4,7 @@ import Button from 'components/Button'
 import Logo from 'components/Logo'
 import MediaMatch from 'components/MediaMatch'
 import UserDropdown from 'components/UserDropdown'
-import { signOut } from 'next-auth/client'
+import { signOut } from 'next-auth/react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
@@ -12,7 +12,7 @@ import * as S from './styles'
 
 export type MenuProps = {
   username?: string | null
-  loading?: boolean
+  loading?: 'loading' | 'authenticated' | 'unauthenticated'
 }
 
 const Menu = ({ username, loading }: MenuProps) => {

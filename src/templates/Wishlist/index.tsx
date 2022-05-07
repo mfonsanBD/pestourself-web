@@ -6,7 +6,7 @@ import { Divider } from 'components/Divider'
 import { Container } from 'components/Container'
 
 import Base from 'templates/Base'
-import { SITE_NAME } from 'templates/Home'
+import { SITE_NAME } from 'pages/_app'
 
 const Wishlist = () => {
   return (

@@ -5,7 +5,6 @@ export const Wrapper = styled.div``
 
 export const SectionFooter = styled.section`
   ${({ theme }) => css`
-    margin-top: ${theme.spacings.large};
     padding-bottom: ${theme.spacings.xsmall};
     padding-top: ${theme.spacings.xxlarge};
     background-color: ${theme.colors.footerbg};

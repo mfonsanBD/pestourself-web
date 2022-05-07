@@ -1,6 +1,6 @@
 // import { GameCardProps } from 'components/GameCard'
 import { createContext, useContext, useEffect, useMemo, useState } from 'react'
-import { useSession } from 'next-auth/client'
+import { useSession } from 'next-auth/react'
 import { useQueryWishlist } from 'graphql/queries/wishlist'
 // import { GameMapper } from 'utils/mappers'
 import { QueryWishlist_wishlists_games } from 'graphql/generated/QueryWishlist'
@@ -36,7 +36,7 @@ export type WishlistProviderProps = {
 }
 
 const WishlistProvider = ({ children }: WishlistProviderProps) => {
-  const [session] = useSession()
+  const { data: session } = useSession()
   const [wishlistId, setWishlistId] = useState<string | null>()
   const [wishlistItems, setWishlistItems] = useState<
     QueryWishlist_wishlists_games[]

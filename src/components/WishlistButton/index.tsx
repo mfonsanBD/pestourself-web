@@ -2,7 +2,7 @@ import { Favorite, FavoriteBorder } from '@styled-icons/material-outlined'
 import Button, { ButtonProps } from 'components/Button'
 import Spinner from 'components/Spinner'
 import { useWishlist } from 'hooks/use-wishlist'
-import { useSession } from 'next-auth/client'
+import { useSession } from 'next-auth/react'
 import { useState } from 'react'
 
 type WishlistButtonProps = {
@@ -15,7 +15,7 @@ const WishlistButton = ({
   hasText,
   size = 'small'
 }: WishlistButtonProps) => {
-  const [session] = useSession()
+  const { data: session } = useSession()
   const [loading, setLoading] = useState(false)
   const { isInWishlist, addToWishlist, removeFromWishlist } = useWishlist()
 
