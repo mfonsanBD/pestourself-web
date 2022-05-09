@@ -1,0 +1,72 @@
+export default [
+  {
+    id: '1',
+    cover: '/img/card-cover.png',
+    photo: '/img/user-photo.jpg',
+    name: 'User Name',
+    slug: 'user-name',
+    shortDescription: 'This is the user short description',
+    isAdvertiser: true,
+    city: 'Itaboraí',
+    state: 'RJ',
+    country: 'Brasil',
+    categories: ['Pet Sitter', 'Dog Walker'],
+    rating: 4.9
+  },
+  {
+    id: '2',
+    cover: '/img/card-cover.png',
+    photo: '/img/user-photo.jpg',
+    name: 'User Name',
+    slug: 'user-name',
+    shortDescription: 'This is the user short description',
+    isAdvertiser: true,
+    city: 'Itaboraí',
+    state: 'RJ',
+    country: 'Brasil',
+    categories: ['Pet Sitter', 'Dog Walker'],
+    rating: 4.8
+  },
+  {
+    id: '3',
+    cover: '/img/card-cover.png',
+    photo: '/img/user-photo.jpg',
+    name: 'User Name',
+    slug: 'user-name',
+    shortDescription: 'This is the user short description',
+    isAdvertiser: true,
+    city: 'Itaboraí',
+    state: 'RJ',
+    country: 'Brasil',
+    categories: ['Pet Sitter', 'Dog Walker'],
+    rating: 4.7
+  },
+  {
+    id: '4',
+    cover: '/img/card-cover.png',
+    photo: '/img/user-photo.jpg',
+    name: 'User Name',
+    slug: 'user-name',
+    shortDescription: 'This is the user short description',
+    isAdvertiser: true,
+    city: 'Itaboraí',
+    state: 'RJ',
+    country: 'Brasil',
+    categories: ['Pet Sitter', 'Dog Walker'],
+    rating: 4.6
+  },
+  {
+    id: '5',
+    cover: '/img/card-cover.png',
+    photo: '/img/user-photo.jpg',
+    name: 'User Name',
+    slug: 'user-name',
+    shortDescription: 'This is the user short description',
+    isAdvertiser: true,
+    city: 'Itaboraí',
+    state: 'RJ',
+    country: 'Brasil',
+    categories: ['Pet Sitter', 'Dog Walker'],
+    rating: 4.5
+  }
+]

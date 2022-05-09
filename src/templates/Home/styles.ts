@@ -79,8 +79,12 @@ export const Main = styled.main`
 `
 
 const Section = styled.section`
-  padding-top: 12rem;
-  padding-bottom: 12rem;
+  ${({ theme }) => css`
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+    padding-left: calc(${theme.grid.gutter} / 2);
+    padding-right: calc(${theme.grid.gutter} / 2);
+  `}
 `
 
 export const SectionParceiros = styled(Section)`
@@ -92,3 +96,5 @@ export const SectionLocais = styled(Section)`
     background-color: ${theme.colors.white};
   `}
 `
+
+export const SectionAnunciantes = styled(Section)``

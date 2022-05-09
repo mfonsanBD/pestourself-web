@@ -37,6 +37,7 @@ export const Wrapper = styled.div<WrapperProps>`
   ${({ theme, color, size, backTitle, align }) => css`
     text-align: ${align};
     line-height: 1;
+    margin-bottom: 8rem;
     ${!!size && wrapperModifiers[size](theme)}
 
     h2 {

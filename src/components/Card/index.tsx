@@ -7,7 +7,6 @@ import { LocationMarker } from '@styled-icons/heroicons-solid/LocationMarker'
 
 import * as S from './styles'
 import Ratings from 'components/Ratings'
-import CardGallery, { CardGalleryImageProps } from 'components/CardGallery'
 
 export type CardProps = {
   id: string
@@ -23,7 +22,6 @@ export type CardProps = {
   state: string
   country: string
   categories: string[]
-  gallery: CardGalleryImageProps[]
   rating: number
 }
 
@@ -40,7 +38,6 @@ const Card = ({
   state,
   country,
   categories,
-  gallery,
   rating
 }: CardProps) => {
   return (
@@ -86,7 +83,6 @@ const Card = ({
 
       <S.CardFooter>
         <S.Categories>{categories.join(', ')}</S.Categories>
-        <CardGallery items={gallery} />
       </S.CardFooter>
     </S.Wrapper>
   )

@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 
 import CardSlider from '.'
-import mock from './mock'
+import mock from './partners'
 
 const props = {
   items: mock

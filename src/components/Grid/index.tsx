@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import media from 'styled-media-query'
 
 export const Grid = styled.div`
   ${({ theme }) => css`
@@ -6,5 +7,9 @@ export const Grid = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
     grid-gap: ${theme.spacings.medium};
     margin: ${theme.spacings.medium} 0;
+
+    ${media.lessThan('medium')`
+      grid-template-columns: 1fr;
+    `}
   `}
 `

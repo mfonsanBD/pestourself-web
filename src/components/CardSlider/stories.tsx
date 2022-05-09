@@ -1,16 +1,30 @@
 import { Story, Meta } from '@storybook/react'
 
 import CardSlider, { CardSliderProps } from '.'
-import mock from './mock'
+import partnersMock from './partners'
+import advertiserMock from './advertiser'
 
 export default {
   title: 'CardSlider',
-  component: CardSlider,
-  args: { items: mock }
+  component: CardSlider
 } as Meta
 
-export const Default: Story<CardSliderProps> = (args) => (
+export const Partners: Story<CardSliderProps> = (args) => (
   <div style={{ maxWidth: '100rem', margin: '0 auto' }}>
     <CardSlider {...args} />
   </div>
 )
+
+Partners.args = {
+  items: partnersMock
+}
+
+export const Advertiser: Story<CardSliderProps> = (args) => (
+  <div style={{ maxWidth: '100rem', margin: '0 auto' }}>
+    <CardSlider {...args} />
+  </div>
+)
+
+Advertiser.args = {
+  items: advertiserMock
+}

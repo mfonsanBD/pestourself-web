@@ -2,14 +2,28 @@ import Image from 'next/image'
 import { NextSeo } from 'next-seo'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 
+import { Grid } from 'components/Grid'
 import Heading from 'components/Heading'
+import { CardProps } from 'components/Card'
+import CardSlider from 'components/CardSlider'
+import LocationCard, { LocationCardProps } from 'components/LocationCard'
 
 import Base from 'templates/Base'
 import { SITE_NAME } from 'pages/_app'
 
 import * as S from './styles'
 
-const Home = () => (
+export type HomeProps = {
+  topPartners: CardProps[]
+  topAdvertiser: CardProps[]
+  mostPartnersInThePlace: LocationCardProps[]
+}
+
+const Home = ({
+  topPartners,
+  mostPartnersInThePlace,
+  topAdvertiser
+}: HomeProps) => (
   <Base>
     <NextSeo
       title={`Página Inicial - ${SITE_NAME}`}
@@ -52,6 +66,7 @@ const Home = () => (
           description="Esses são os parceiros com melhor avaliação em nossa plataforma"
           size="large"
         />
+        <CardSlider items={topPartners} />
       </S.SectionParceiros>
 
       <S.SectionLocais>
@@ -63,7 +78,23 @@ const Home = () => (
           description="Locais que tem mais parceiros disponíveis para te atender"
           size="large"
         />
+        <Grid>
+          {mostPartnersInThePlace.map((place) => (
+            <LocationCard key={place.slug} {...place} />
+          ))}
+        </Grid>
       </S.SectionLocais>
+
+      <S.SectionAnunciantes>
+        <Heading
+          title="Veja os Anunciantes em Destaque"
+          align="center"
+          color="darkGray"
+          backTitle="Anunciantes"
+          size="large"
+        />
+        <CardSlider items={topAdvertiser} />
+      </S.SectionAnunciantes>
     </S.Main>
   </Base>
 )

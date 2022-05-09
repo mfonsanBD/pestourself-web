@@ -25,11 +25,11 @@ const FormSignUp = () => {
   })
 
   const [createUser, { error, loading }] = useMutation(MUTATION_REGISTER, {
-    onError: (err) =>
-      setFormError(
-        err?.graphQLErrors[0]?.extensions?.exception.data.message[0].messages[0]
-          .message
-      ),
+    onError: (err) => console.log(err),
+    // setFormError(
+    //   err?.graphQLErrors[0]?.extensions?.exception.data.message[0].messages[0]
+    //     .message
+    // ),
     onCompleted: () => {
       !error &&
         signIn('credentials', {
