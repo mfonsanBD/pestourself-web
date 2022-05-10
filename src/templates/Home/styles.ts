@@ -110,4 +110,8 @@ export const Infos = styled.div`
   gap: 2rem;
   align-items: center;
   justify-content: center;
+
+  ${media.lessThan('medium')`
+    flex-direction: column;
+  `}
 `
