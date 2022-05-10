@@ -4,12 +4,16 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 
 import { Grid } from 'components/Grid'
 import Heading from 'components/Heading'
+import InfoCard from 'components/InfoCard'
 import { CardProps } from 'components/Card'
 import CardSlider from 'components/CardSlider'
 import LocationCard, { LocationCardProps } from 'components/LocationCard'
 
 import Base from 'templates/Base'
 import { SITE_NAME } from 'pages/_app'
+
+import { Schedule, AttachMoney } from '@styled-icons/material-outlined'
+import { DesktopComputer } from '@styled-icons/heroicons-outline'
 
 import * as S from './styles'
 
@@ -95,6 +99,34 @@ const Home = ({
         />
         <CardSlider items={topAdvertiser} />
       </S.SectionAnunciantes>
+
+      <S.SectionComoFunciona>
+        <Heading
+          title="O que acontece na Pets Tour!"
+          align="center"
+          color="darkGray"
+          backTitle="Como Funciona?"
+          description="Essas são algumas das coisas que você consegue fazer em nossa plataforma"
+          size="large"
+        />
+        <S.Infos>
+          <InfoCard
+            icon={<Schedule size={24} />}
+            title="Agendamento"
+            description="Seus clientes podem agendar seus serviços dentro da Pets Tour Self."
+          />
+          <InfoCard
+            icon={<AttachMoney size={24} />}
+            title="Recebimento"
+            description="Acompanhe quanto você tem para receber no mês na sua área de parceiro."
+          />
+          <InfoCard
+            icon={<DesktopComputer size={24} />}
+            title="Customização"
+            description="Deixe sua página com a sua cara e seus cliente ficarão encantados com ela."
+          />
+        </S.Infos>
+      </S.SectionComoFunciona>
     </S.Main>
   </Base>
 )

@@ -98,3 +98,16 @@ export const SectionLocais = styled(Section)`
 `
 
 export const SectionAnunciantes = styled(Section)``
+
+export const SectionComoFunciona = styled(Section)`
+  ${({ theme }) => css`
+    background-color: ${theme.colors.white};
+  `}
+`
+
+export const Infos = styled.div`
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+`
