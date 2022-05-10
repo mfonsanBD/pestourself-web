@@ -21,7 +21,7 @@ const Ratings = ({ rating }: RatingsProps) => {
             ? 'Bom'
             : rating > 4 && rating <= 4.8
             ? 'Muito Bom'
-            : rating > 4.8 && 'Excelete'}
+            : rating > 4.8 && 'Excelente'}
         </small>
       </S.TotalAndMessage>
     </S.Wrapper>

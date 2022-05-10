@@ -1,4 +1,5 @@
 import styled, { css, DefaultTheme } from 'styled-components'
+import media from 'styled-media-query'
 import { HeadingProps } from '.'
 
 type WrapperProps = Pick<HeadingProps, 'color' | 'size' | 'backTitle' | 'align'>
@@ -28,6 +29,10 @@ export const wrapperModifiers = {
       &::after {
         margin-top: -2rem;
         font-size: ${theme.font.sizes.huge};
+
+        ${media.lessThan('medium')`
+          font-size: calc(${theme.font.sizes.huge} - 1rem) ;
+        `}
       }
     }
   `

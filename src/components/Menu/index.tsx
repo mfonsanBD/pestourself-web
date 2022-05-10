@@ -15,7 +15,7 @@ export type MenuProps = {
   loading?: 'loading' | 'authenticated' | 'unauthenticated'
 }
 
-const Menu = ({ username, loading }: MenuProps) => {
+const Menu = ({ username, loading = 'unauthenticated' }: MenuProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const { push } = useRouter()
   return (
@@ -52,7 +52,7 @@ const Menu = ({ username, loading }: MenuProps) => {
           </S.MenuNav>
         </MediaMatch>
 
-        {!loading && (
+        {loading !== 'loading' && (
           <>
             <S.MenuGroup>
               <MediaMatch greaterThan="medium">
@@ -69,16 +69,22 @@ const Menu = ({ username, loading }: MenuProps) => {
         )}
       </S.RightMenu>
 
-      {!loading && (
+      {loading !== 'loading' && (
         <S.MenuFull aria-hidden={!isOpen} isOpen={isOpen}>
           <CloseIcon aria-label="Close Menu" onClick={() => setIsOpen(false)} />
 
           <S.MenuNav>
-            <Link href="/" passHref>
-              <S.MenuLink>Inicio</S.MenuLink>
+            <Link href="/quem-somos" passHref>
+              <S.MenuLink>Quem Somos</S.MenuLink>
             </Link>
-            <Link href="/games" passHref>
-              <S.MenuLink>Jogos</S.MenuLink>
+            <Link href="/vender-meus-servicos" passHref>
+              <S.MenuLink>Vender Meus Serviços</S.MenuLink>
+            </Link>
+            <Link href="/anunciar" passHref>
+              <S.MenuLink>Anunciar</S.MenuLink>
+            </Link>
+            <Link href="/noticias" passHref>
+              <S.MenuLink>Noticias</S.MenuLink>
             </Link>
 
             {!!username && (
