@@ -20,7 +20,7 @@ export const Title = styled.h2`
 
 export const description = styled.p`
   ${({ theme }) => css`
-    color: ${theme.colors.white};
+    color: ${theme.colors.mediumGray};
     font-size: ${theme.font.sizes.large};
     font-weight: ${theme.font.light};
     margin-bottom: ${theme.spacings.medium};
