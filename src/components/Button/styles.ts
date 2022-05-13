@@ -4,7 +4,7 @@ import { ButtonProps } from '.'
 
 export type WrapperProps = {
   hasIcon: boolean
-} & Pick<ButtonProps, 'size' | 'fullWidth' | 'minimal'>
+} & Pick<ButtonProps, 'size' | 'fullWidth' | 'minimal' | 'bgColor'>
 
 const wrapperModifiers = {
   small: (theme: DefaultTheme) => css`
@@ -56,12 +56,14 @@ const wrapperModifiers = {
 }
 
 export const Wrapper = styled.button<WrapperProps>`
-  ${({ theme, size, fullWidth, minimal, hasIcon, disabled }) => css`
+  ${({ theme, size, bgColor, fullWidth, minimal, hasIcon, disabled }) => css`
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: ${theme.colors.primary};
-    color: ${theme.colors.white};
+    background: ${bgColor === 'white'
+      ? theme.colors.white
+      : theme.colors.primary};
+    color: ${bgColor === 'white' ? theme.colors.primary : theme.colors.white};
     border: 0;
     cursor: pointer;
     border-radius: ${theme.border.radius};
@@ -71,7 +73,12 @@ export const Wrapper = styled.button<WrapperProps>`
     text-decoration: none;
 
     &:hover {
-      background: ${minimal ? 'none' : `${darken(0.1, theme.colors.primary)}`};
+      background: ${minimal
+        ? 'none'
+        : `${darken(
+            0.1,
+            bgColor === 'white' ? theme.colors.white : theme.colors.primary
+          )}`};
     }
 
     ${!!size && wrapperModifiers[size](theme)}

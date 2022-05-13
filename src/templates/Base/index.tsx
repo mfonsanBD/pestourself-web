@@ -7,14 +7,15 @@ import * as S from './styles'
 
 export type BaseTemplateProps = {
   children: React.ReactNode
+  color?: 'white' | 'primary'
 }
 
-const Base = ({ children }: BaseTemplateProps) => {
+const Base = ({ children, color = 'primary' }: BaseTemplateProps) => {
   const { data: session, status: loading } = useSession()
   return (
     <S.Wrapper>
       <S.SectionMenu>
-        <Menu username={session?.user?.name} loading={loading} />
+        <Menu color={color} username={session?.user?.name} loading={loading} />
       </S.SectionMenu>
 
       {children}

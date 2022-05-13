@@ -2,21 +2,20 @@ import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
 
 export const Wrapper = styled.menu<MenuFullProps>`
-  ${({ theme, isOpen }) => css`
-    width: 91.5%;
+  ${({ theme, isOpen, bgColor }) => css`
+    width: 100%;
     max-width: ${theme.grid.container};
+    background: ${bgColor === 'primary' ? 'transparent' : theme.colors.primary};
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: ${theme.spacings.small} 0;
+    padding: calc(${theme.spacings.small} + 0.4rem) 1.3rem;
     z-index: ${isOpen ? theme.layers.menu : `calc(${theme.layers.menu} - 1)`};
-    margin-top: 1rem;
+    margin-top: 0;
 
     ${media.greaterThan('medium')`
-      width: 100%;
       padding: ${theme.spacings.medium};
-      margin-top: 0;
     `}
   `}
 `
@@ -95,6 +94,7 @@ export const MenuLink = styled.a`
 
 type MenuFullProps = {
   isOpen: boolean
+  bgColor?: 'white' | 'primary'
 }
 
 export const MenuFull = styled.nav<MenuFullProps>`

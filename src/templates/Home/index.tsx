@@ -124,7 +124,7 @@ const Home = ({
                   error={fieldError?.advertisers}
                   placeholder="Em qual localização deseja encontar um anunciante?"
                 />
-                <Button>Buscar</Button>
+                <Button icon={<SearchOutline size={24} />}>Buscar</Button>
               </S.FilterArea>
             </TabPanel>
           </Tabs>

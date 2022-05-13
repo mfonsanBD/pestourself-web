@@ -13,13 +13,18 @@ import * as S from './styles'
 export type MenuProps = {
   username?: string | null
   loading?: 'loading' | 'authenticated' | 'unauthenticated'
+  color?: 'white' | 'primary'
 }
 
-const Menu = ({ username, loading = 'unauthenticated' }: MenuProps) => {
+const Menu = ({
+  username,
+  loading = 'unauthenticated',
+  color = 'primary'
+}: MenuProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const { push } = useRouter()
   return (
-    <S.Wrapper isOpen={isOpen}>
+    <S.Wrapper isOpen={isOpen} bgColor={color}>
       <MediaMatch lessThan="medium">
         <S.IconWrapper onClick={() => setIsOpen(true)}>
           <MenuIcon aria-label="Open Menu" />
@@ -58,7 +63,9 @@ const Menu = ({ username, loading = 'unauthenticated' }: MenuProps) => {
               <MediaMatch greaterThan="medium">
                 {!username ? (
                   <Link href="/sign-in" passHref>
-                    <Button as="a">Entrar</Button>
+                    <Button as="a" bgColor={color}>
+                      Entrar
+                    </Button>
                   </Link>
                 ) : (
                   <UserDropdown username={username} />

@@ -37,7 +37,7 @@ export const Cover = styled.div`
 
 export const Filters = styled.div`
   ${({ theme }) => css`
-    width: 91.5%;
+    width: 95%;
     position: absolute;
     max-width: ${theme.grid.container};
     background-color: ${theme.colors.white};
@@ -48,7 +48,6 @@ export const Filters = styled.div`
     z-index: calc(${theme.layers.menu} - 1);
 
     ${media.greaterThan('medium')`
-      width: 100%;
       padding: ${theme.spacings.medium};
     `}
 
