@@ -59,7 +59,7 @@ export const Wrapper = styled.div<WrapperProps>`
         top: 0;
         bottom: 0;
         right: 0;
-        opacity: 0.1;
+        opacity: ${color === 'white' ? 0.2 : 0.1};
       }
     }
 

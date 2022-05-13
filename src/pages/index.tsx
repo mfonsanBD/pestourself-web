@@ -3,6 +3,7 @@
 import topPartners from 'components/CardSlider/partners'
 import topAdvertiser from 'components/CardSlider/advertiser'
 import mostPartnersInThePlace from 'components/LocationCard/mock'
+import partnersWithMostFollowers from 'components/FollowCardSlider/mock'
 
 import Home, { HomeProps } from 'templates/Home'
 
@@ -18,7 +19,8 @@ export async function getStaticProps() {
     props: {
       topPartners,
       mostPartnersInThePlace,
-      topAdvertiser
+      topAdvertiser,
+      partnersWithMostFollowers
     }
   }
 }

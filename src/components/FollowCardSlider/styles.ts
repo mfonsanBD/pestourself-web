@@ -1,17 +1,13 @@
 import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
 
-type WrapperProps = {
-  isAdvertiser: boolean
-}
-
-export const Wrapper = styled.section<WrapperProps>`
-  ${({ theme, isAdvertiser }) => css`
+export const Wrapper = styled.section`
+  ${({ theme }) => css`
     overflow-x: hidden;
 
     ${media.greaterThan('medium')`
       padding-top: 3rem;
-      height: ${isAdvertiser ? '44rem' : '52rem'};
+      height: 31rem;
     `}
 
     .slick-track,
@@ -47,8 +43,7 @@ export const Wrapper = styled.section<WrapperProps>`
       display: flex;
       justify-content: center;
       align-items: center;
-      color: ${theme.colors.white};
-      background-color: ${theme.colors.primary};
+      background-color: ${theme.colors.white};
       cursor: pointer;
       position: absolute;
       border: none;

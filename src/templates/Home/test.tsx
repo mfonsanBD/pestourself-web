@@ -4,13 +4,15 @@ import { render, screen } from 'utils/test-utils'
 import topPartners from 'components/CardSlider/partners'
 import topAdvertiser from 'components/CardSlider/advertiser'
 import mostPartnersInThePlace from 'components/LocationCard/mock'
+import partnersWithMostFollowers from 'components/FollowCardSlider/mock'
 
 import Home from '.'
 
 const props = {
   topPartners,
   mostPartnersInThePlace,
-  topAdvertiser
+  topAdvertiser,
+  partnersWithMostFollowers
 }
 
 jest.mock('templates/Base', () => ({

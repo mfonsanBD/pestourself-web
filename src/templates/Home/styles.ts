@@ -1,6 +1,10 @@
 import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
 
+import * as TextFieldStyles from 'components/TextField/styles'
+import * as SelectStyles from 'components/Select/styles'
+import * as ButtonStyles from 'components/Button/styles'
+
 export const Cover = styled.div`
   position: relative;
   top: 0;
@@ -74,6 +78,26 @@ export const Filters = styled.div`
   `}
 `
 
+export const FilterArea = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  ${TextFieldStyles.Wrapper} {
+    flex: 1;
+  }
+
+  ${media.lessThan('medium')`
+    flex-direction: column;
+
+    ${TextFieldStyles.Wrapper},
+    ${SelectStyles.Wrapper},
+    ${ButtonStyles.Wrapper} {
+      width: 100%;
+    }
+  `}
+`
+
 export const Main = styled.main`
   position: relative;
 `
@@ -102,6 +126,12 @@ export const SectionAnunciantes = styled(Section)``
 export const SectionComoFunciona = styled(Section)`
   ${({ theme }) => css`
     background-color: ${theme.colors.white};
+  `}
+`
+
+export const SectionFollowPartners = styled(Section)`
+  ${({ theme }) => css`
+    background-color: ${theme.colors.primary};
   `}
 `
 

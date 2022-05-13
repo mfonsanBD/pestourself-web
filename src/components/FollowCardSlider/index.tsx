@@ -1,5 +1,6 @@
-import Card, { CardProps } from 'components/Card'
+import FollowCard, { FollowCardProps } from 'components/FollowCard'
 import Slider, { SliderSettings } from 'components/Slider'
+
 import * as S from './styles'
 
 type ArrowsProps = React.HTMLAttributes<HTMLDivElement>
@@ -8,7 +9,7 @@ const ArrowRight = (props: ArrowsProps) => {
   const { className, onClick } = props
   return (
     <div className={className} onClick={onClick}>
-      <img src="/img/arrow-right.svg" aria-label="next match" />
+      <img src="/img/orange-arrow-right.svg" aria-label="next match" />
     </div>
   )
 }
@@ -17,7 +18,7 @@ const ArrowLeft = (props: ArrowsProps) => {
   const { className, onClick } = props
   return (
     <div className={className} onClick={onClick}>
-      <img src="/img/arrow-left.svg" aria-label="previous match" />
+      <img src="/img/orange-arrow-left.svg" aria-label="previous match" />
     </div>
   )
 }
@@ -39,7 +40,7 @@ const settings: SliderSettings = {
       breakpoint: 1024,
       settings: {
         arrows: true,
-        slidesToShow: 2.2
+        slidesToShow: 3.2
       }
     },
     {
@@ -61,18 +62,18 @@ const settings: SliderSettings = {
   prevArrow: <ArrowLeft />
 }
 
-export type CardSliderProps = {
-  items: CardProps[]
+export type FollowCardSliderProps = {
+  items: FollowCardProps[]
 }
 
-const CardSlider = ({ items }: CardSliderProps) => (
-  <S.Wrapper isAdvertiser={items[0].isAdvertiser!}>
+const FollowCardSlider = ({ items }: FollowCardSliderProps) => (
+  <S.Wrapper>
     <Slider settings={settings}>
       {items.map((item, index) => (
-        <Card key={index} {...item} />
+        <FollowCard key={index} {...item} />
       ))}
     </Slider>
   </S.Wrapper>
 )
 
-export default CardSlider
+export default FollowCardSlider
