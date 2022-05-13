@@ -12,7 +12,9 @@ import { CardProps } from 'components/Card'
 import TextField from 'components/TextField'
 import CardSlider from 'components/CardSlider'
 import { FollowCardProps } from 'components/FollowCard'
+import { TestimonialProps } from 'components/Testimonial'
 import FollowCardSlider from 'components/FollowCardSlider'
+import TestimonialSlider from 'components/TestimonialSlider'
 import LocationCard, { LocationCardProps } from 'components/LocationCard'
 
 import Base from 'templates/Base'
@@ -36,13 +38,15 @@ export type HomeProps = {
   topAdvertiser: CardProps[]
   mostPartnersInThePlace: LocationCardProps[]
   partnersWithMostFollowers: FollowCardProps[]
+  testimonials: TestimonialProps[]
 }
 
 const Home = ({
   topPartners,
   mostPartnersInThePlace,
   topAdvertiser,
-  partnersWithMostFollowers
+  partnersWithMostFollowers,
+  testimonials
 }: HomeProps) => {
   const [fieldError, setFieldError] = useState<FieldErrors>({})
   const [values, setValues] = useState({ location: '', pet: '', category: '' })
@@ -205,6 +209,18 @@ const Home = ({
           />
           <FollowCardSlider items={partnersWithMostFollowers} />
         </S.SectionFollowPartners>
+
+        <S.SectionTestimonial>
+          <Heading
+            title="Palavras dos nossos Parceiros"
+            align="center"
+            color="darkGray"
+            backTitle="Depoimentos"
+            description="Veja o que nossos parceiros estão dizendo ao usar nossa plataforma"
+            size="large"
+          />
+          <TestimonialSlider items={testimonials} />
+        </S.SectionTestimonial>
 
         <S.SectionComoFunciona>
           <Heading

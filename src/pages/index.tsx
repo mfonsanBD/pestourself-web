@@ -1,6 +1,7 @@
 // import { initializeApollo } from 'utils/apollo'
 
 import topPartners from 'components/CardSlider/partners'
+import testimonials from 'components/TestimonialSlider/mock'
 import topAdvertiser from 'components/CardSlider/advertiser'
 import mostPartnersInThePlace from 'components/LocationCard/mock'
 import partnersWithMostFollowers from 'components/FollowCardSlider/mock'
@@ -20,7 +21,8 @@ export async function getStaticProps() {
       topPartners,
       mostPartnersInThePlace,
       topAdvertiser,
-      partnersWithMostFollowers
+      partnersWithMostFollowers,
+      testimonials
     }
   }
 }

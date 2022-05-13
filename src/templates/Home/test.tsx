@@ -2,6 +2,7 @@ import 'match-media-mock'
 import { render, screen } from 'utils/test-utils'
 
 import topPartners from 'components/CardSlider/partners'
+import testimonials from 'components/TestimonialSlider/mock'
 import topAdvertiser from 'components/CardSlider/advertiser'
 import mostPartnersInThePlace from 'components/LocationCard/mock'
 import partnersWithMostFollowers from 'components/FollowCardSlider/mock'
@@ -12,7 +13,8 @@ const props = {
   topPartners,
   mostPartnersInThePlace,
   topAdvertiser,
-  partnersWithMostFollowers
+  partnersWithMostFollowers,
+  testimonials
 }
 
 jest.mock('templates/Base', () => ({
@@ -26,8 +28,6 @@ describe('<Home />', () => {
   it('should render heading', () => {
     render(<Home {...props} />)
 
-    expect(
-      screen.getByRole('heading', { name: /campos de Busca de parceiros/i })
-    ).toBeInTheDocument()
+    expect(screen.getByTestId('Mock Base')).toBeInTheDocument()
   })
 })

@@ -135,6 +135,8 @@ export const SectionFollowPartners = styled(Section)`
   `}
 `
 
+export const SectionTestimonial = styled(Section)``
+
 export const Infos = styled.div`
   display: flex;
   gap: 2rem;
