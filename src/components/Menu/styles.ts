@@ -17,6 +17,12 @@ export const Wrapper = styled.menu<MenuFullProps>`
     ${media.greaterThan('medium')`
       padding: ${theme.spacings.medium};
     `}
+
+    ${MenuLink}:hover::after {
+      background-color: ${bgColor === 'primary'
+        ? theme.colors.primary
+        : theme.colors.white};
+    }
   `}
 `
 
@@ -75,7 +81,6 @@ export const MenuLink = styled.a`
         position: absolute;
         display: block;
         height: 0.3rem;
-        background-color: ${theme.colors.primary};
         animation: hoverAnimation 0.2s forwards;
       }
       @keyframes hoverAnimation {

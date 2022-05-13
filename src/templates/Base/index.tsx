@@ -14,7 +14,7 @@ const Base = ({ children, color = 'primary' }: BaseTemplateProps) => {
   const { data: session, status: loading } = useSession()
   return (
     <S.Wrapper>
-      <S.SectionMenu>
+      <S.SectionMenu color={color}>
         <Menu color={color} username={session?.user?.name} loading={loading} />
       </S.SectionMenu>
 

@@ -15,8 +15,19 @@ export const SectionFooter = styled.section`
   `}
 `
 
-export const SectionMenu = styled.section`
-  width: 100%;
-  display: flex;
-  justify-content: center;
+type SectionMenuProps = {
+  color?: 'white' | 'primary'
+}
+
+export const SectionMenu = styled.section<SectionMenuProps>`
+  ${({ color }) => css`
+    width: 100%;
+    height: ${color === 'white' ? '11.4rem' : 0};
+    display: flex;
+    justify-content: center;
+
+    ${media.lessThan('medium')`
+      height: ${color === 'white' ? '8rem' : 0};
+    `}
+  `}
 `
